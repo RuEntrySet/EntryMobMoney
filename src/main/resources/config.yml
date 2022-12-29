@@ -1,0 +1,84 @@
+messages:
+  prefix: '&f(&b!&f) '
+  no_permission: 'У вас нет прав!'
+  getmoney: 'За убийство моба вы получили &b<size> &fмонет.;actionbar:&#FFF175+<size> &fмонет.'
+  getmoneyplayer: 'За убийство игрока вы получили &b<size> &fмонет.;actionbar:&#FFF175+<size> &fмонет.'
+  target_getmoneyplayer: 'Вас убили, вы потеряли &b<size> &fмонет.;actionbar:&#FB0000-<size> &fмонет.'
+permissions:
+  x2money: 'hypermobmoney.x2money'
+settings:
+  player: 10
+  mobs:
+    - ELDER_GUARDIAN:10:20
+    - WITHER_SKELETON:0.5:1
+    - HUSK:0.4:0.8
+    - ZOMBIE_VILLAGER:0.6:1.2
+    - SKELETON_HORSE:0.4:0.8
+    - ZOMBIE_HORSE:0.4:0.8
+    - DONKEY:0.3:0.6
+    - MULE:0.3:0.6
+    - VEX:0.3:0.6
+    - VINDICATOR:3:6
+    - ILLUSIONER:0.3:0.6
+    - CREEPER:0.4:0.8
+    - SKELETON:0.3:0.6
+    - SPIDER:0.2:0.4
+    - GIANT:10:20
+    - ZOMBIE:0.3:0.6
+    - SLIME:0.2:0.2
+    - GHAST:0.6:1.2
+    - ZOMBIFIED_PIGLIN:0.1:0.3
+    - ENDERMAN:0.6:1.2
+    - CAVE_SPIDER:0.2:0.4
+    - SILVERFISH:0.2:0.4
+    - BLAZE:0.5:1.0
+    - MAGMA_CUBE:0.1:0.2
+    - ENDER_DRAGON:500:1000
+    - WITHER:100:200
+    - BAT:20:40
+    - WITCH:0.6:1.2
+    - ENDERMITE:0.2:0.4
+    - GUARDIAN:0.3:0.6
+    - SHULKER:1.5:3
+    - PIG:0.2:0.4
+    - SHEEP:0.3:0.6
+    - COW:0.3:0.6
+    - CHICKEN:0.2:0.4
+    - SQUID:0.4:0.8
+    - WOLF:0.3:0.6
+    - MUSHROOM_COW:2:4
+    - OCELOT:1:2
+    - IRON_GOLEM:3:6
+    - HORSE:0.5:1
+    - RABBIT:0.4:0.8
+    - POLAR_BEAR:0.4:0.8
+    - LLAMA:0.3:0.6
+    - LLAMA_SPIT:0.4:0.8
+    - PARROT:0.4:0.8
+    - VILLAGER:1:2
+    - TURTLE:0.8:1.6
+    - PHANTOM:0.2:0.4
+    - COD:0.2:0.4
+    - SALMON:0.4:0.8
+    - PUFFERFISH:0.4:0.8
+    - TROPICAL_FISH:0.4:0.8
+    - DROWNED:0.4:0.8
+    - DOLPHIN:0.5:1
+    - CAT:0.3:0.6
+    - PANDA:0.5:1
+    - PILLAGER:0.5:1
+    - RAVAGER:2:4
+    - TRADER_LLAMA:0.4:0.8
+    - WANDERING_TRADER:0.6:1.2
+    - FOX:0.2:0.4
+    - BEE:0.4:0.8
+    - HOGLIN:0.4:0.8
+    - PIGLIN:0.2:0.4
+    - STRIDER:1:2
+    - ZOGLIN:0.8:1.6
+    - PIGLIN_BRUTE:1:2
+    - AXOLOTL:1:2
+    - SNOWMAN:0.1:0.2
+    - EVOKER:0.6:1.2
+    - STRAY:0.5:1
+    - GOAT:0.4:0.8
