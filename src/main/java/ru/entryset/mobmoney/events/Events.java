@@ -1,5 +1,7 @@
 package ru.entryset.mobmoney.events;
 
+import net.md_5.bungee.api.ChatMessageType;
+import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -60,7 +62,8 @@ public class Events implements Listener {
         }
         Money money1 = new Money(damager);
         money1.give(money);
-        Main.messager.sendMessage(damager, Main.config.getMessage("getmoney").replace("<size>", money + ""), true);
+        damager.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText("awdawd"));
+        Main.messager.sendMessage(damager, Main.config.getMessage("getmoney").replace("<size>", money + ""));
     }
 
     @EventHandler
