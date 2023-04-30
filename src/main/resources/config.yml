@@ -1,9 +1,9 @@
 messages:
   prefix: '&f(&b!&f) '
   no_permission: 'У вас нет прав!'
-  getmoney: 'За убийство моба вы получили &b<size> &fмонет.;actionbar:&#FFF175+<size> &fмонет.'
-  getmoneyplayer: 'За убийство игрока вы получили &b<size> &fмонет.;actionbar:&#FFF175+<size> &fмонет.'
-  target_getmoneyplayer: 'Вас убили, вы потеряли &b<size> &fмонет.;actionbar:&#FB0000-<size> &fмонет.'
+  getmoney: 'За убийство моба вы получили &b<size> &fмонет.;actionbar:&a+<size> &fмонет.'
+  getmoneyplayer: 'За убийство игрока вы получили &b<size> &fмонет.;actionbar:&a+<size> &fмонет.'
+  target_getmoneyplayer: 'Вас убили, вы потеряли &b<size> &fмонет.;actionbar:&c-<size> &fмонет.'
 permissions:
   x2money: 'hypermobmoney.x2money'
 settings:

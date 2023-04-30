@@ -9,8 +9,8 @@ version = "1.0.0"
 
 repositories {
     mavenCentral()
-    maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
     maven("https://oss.sonatype.org/content/repositories/snapshots")
+    maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
     maven("https://oss.sonatype.org/content/repositories/central")
     maven("https://repo.extendedclip.com/content/repositories/placeholderapi/")
     maven {
@@ -30,7 +30,7 @@ dependencies {
  
     shadow(files(library + "vault.jar"))
 
-    implementation("ru.entryset:api:3.2.5")
+    implementation("ru.entryset:api:3.6.0")
     implementation("redis.clients:jedis:4.2.0")
 
     compileOnly("me.clip:placeholderapi:2.10.9")

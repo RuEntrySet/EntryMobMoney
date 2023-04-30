@@ -1,7 +1,5 @@
 package ru.entryset.mobmoney.events;
 
-import net.md_5.bungee.api.ChatMessageType;
-import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -9,8 +7,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
-import ru.entryset.mobmoney.hook.Money;
-import ru.entryset.mobmoney.Main;
+import ru.entryset.api.bukkit.manager.MoneyManager;
+import ru.entryset.mobmoney.main.Main;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -60,9 +58,8 @@ public class Events implements Listener {
         if(money == 0.0){
             return;
         }
-        Money money1 = new Money(damager);
+        MoneyManager money1 = new MoneyManager(damager);
         money1.give(money);
-        damager.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText("awdawd"));
         Main.messager.sendMessage(damager, Main.config.getMessage("getmoney").replace("<size>", money + ""));
     }
 
@@ -84,8 +81,8 @@ public class Events implements Listener {
             return;
         }
 
-        Money money_damager = new Money(damager);
-        Money money_target = new Money(target);
+        MoneyManager money_damager = new MoneyManager(damager);
+        MoneyManager money_target = new MoneyManager(target);
 
         if(money_target.get() == 0D){
             return;
@@ -97,8 +94,8 @@ public class Events implements Listener {
         money_damager.give(money);
 
         double i = round(money, 2);
-        Main.messager.sendMessage(damager, Main.config.getMessage("getmoneyplayer").replace("<size>", i + ""), true);
-        Main.messager.sendMessage(target, Main.config.getMessage("target_getmoneyplayer").replace("<size>", i + ""), true);
+        Main.messager.sendMessage(damager, Main.config.getMessage("getmoneyplayer").replace("<size>", i + ""));
+        Main.messager.sendMessage(target, Main.config.getMessage("target_getmoneyplayer").replace("<size>", i + ""));
 
     }
 
