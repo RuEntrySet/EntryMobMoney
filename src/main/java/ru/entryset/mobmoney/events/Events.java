@@ -7,8 +7,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
-import ru.entryset.api.bukkit.manager.MoneyManager;
-import ru.entryset.mobmoney.main.Main;
+import ru.entryset.economy.EntryEconomy;
+import ru.entryset.economy.api.сurrency.Currency;
+import ru.entryset.mobmoney.EntryMobMoney;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -30,7 +31,7 @@ public class Events implements Listener {
 
         List<String> list = new ArrayList<>();
 
-        for(String str : Main.config.getStringList("settings.mobs")){
+        for(String str : EntryMobMoney.config.getStringList("settings.mobs")){
             String s = str.split(":")[0];
             list.add(s.toUpperCase());
         }
@@ -44,12 +45,12 @@ public class Events implements Listener {
         }
         double money = 0.0;
 
-        for(String str : Main.config.getStringList("settings.mobs")){
+        for(String str : EntryMobMoney.config.getStringList("settings.mobs")){
             if(str.split(":")[0].toUpperCase().equalsIgnoreCase(entity.getType().name())){
                 double inner1 = Double.parseDouble(str.split(":")[1]);
                 double inner2 = Double.parseDouble(str.split(":")[2]);
                 money = inner1;
-                if(damager.hasPermission(Main.config.getPermission("x2money"))){
+                if(damager.hasPermission(EntryMobMoney.config.getPermission("x2money"))){
                     money = inner2;
                 }
                 break;
@@ -58,9 +59,9 @@ public class Events implements Listener {
         if(money == 0.0){
             return;
         }
-        MoneyManager money1 = new MoneyManager(damager);
-        money1.give(money);
-        Main.messager.sendMessage(damager, Main.config.getMessage("getmoney").replace("<size>", money + ""));
+        Currency currency = EntryEconomy.getCurrencies().get("money");
+        currency.give(damager, money);
+        EntryMobMoney.messager.sendMessage(damager, EntryMobMoney.config.getMessage("getmoney").replace("<size>", money + ""));
     }
 
     @EventHandler
@@ -80,23 +81,21 @@ public class Events implements Listener {
         if(Bukkit.getPluginManager().getPlugin("Vault") == null) {
             return;
         }
+        Currency currency = EntryEconomy.getCurrencies().get("money");
 
-        MoneyManager money_damager = new MoneyManager(damager);
-        MoneyManager money_target = new MoneyManager(target);
-
-        if(money_target.get() == 0D){
+        double money = currency.get(target);
+        if(currency.get(target) == 0D){
             return;
         }
 
-        double money = money_target.get() * (Main.config.getInt("settings.player")/100);
+        money = (money * (EntryMobMoney.config.getInt("settings.player")/100));
 
-        money_target.take(money);
-        money_damager.give(money);
+        currency.take(target, money);
+        currency.give(damager, money);
 
         double i = round(money, 2);
-        Main.messager.sendMessage(damager, Main.config.getMessage("getmoneyplayer").replace("<size>", i + ""));
-        Main.messager.sendMessage(target, Main.config.getMessage("target_getmoneyplayer").replace("<size>", i + ""));
-
+        EntryMobMoney.messager.sendMessage(damager, EntryMobMoney.config.getMessage("getmoneyplayer").replace("<size>", i + ""));
+        EntryMobMoney.messager.sendMessage(target, EntryMobMoney.config.getMessage("target_getmoneyplayer").replace("<size>", i + ""));
     }
 
     private static double round(double value, int places) {

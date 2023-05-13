@@ -23,17 +23,12 @@ repositories {
     }
 }
 
-dependencies {
-    val library = "C:\\Users\\t9154\\Desktop\\Исходники\\Library/"
+dependencies { 
 
     compileOnly("org.spigotmc:spigot-api:1.19.3-R0.1-SNAPSHOT")
- 
-    shadow(files(library + "vault.jar"))
 
     implementation("ru.entryset:api:1.0.0")
-    implementation("redis.clients:jedis:4.2.0")
-
-    compileOnly("me.clip:placeholderapi:2.10.9")
+    compileOnly(files("lib/EntryEconomy.jar"))
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.0")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")

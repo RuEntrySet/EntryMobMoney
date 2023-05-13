@@ -1,4 +1,4 @@
-package ru.entryset.mobmoney.main;
+package ru.entryset.mobmoney;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -6,7 +6,7 @@ import ru.entryset.api.bukkit.configuration.Config;
 import ru.entryset.api.bukkit.manager.Messager;
 import ru.entryset.mobmoney.events.Events;
 
-public class Main extends JavaPlugin {
+public class EntryMobMoney extends JavaPlugin {
 
     public static Config config;
 
