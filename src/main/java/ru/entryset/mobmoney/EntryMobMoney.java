@@ -1,26 +1,26 @@
 package ru.entryset.mobmoney;
 
-import org.bukkit.Bukkit;
-import org.bukkit.plugin.java.JavaPlugin;
-import ru.entryset.api.bukkit.configuration.Config;
-import ru.entryset.api.bukkit.manager.Messager;
+import ru.entryset.core.EntryCore;
+import ru.entryset.core.bukkit.bukkit.configuration.Config;
+import ru.entryset.core.bukkit.bukkit.manager.Messager;
+import ru.entryset.core.expansion.Expansion;
 import ru.entryset.mobmoney.events.Events;
 
-public class EntryMobMoney extends JavaPlugin {
+public class EntryMobMoney extends Expansion {
 
     public static Config config;
 
     public static Messager messager;
 
     @Override
-    public void onEnable() {
-        config = new Config(this, "config.yml");
+    public void init() {
+        config = new Config(this, "EntryMobMoney.yml");
         messager = new Messager(config);
         registerEvents();
     }
 
     private void registerEvents() {
-        Bukkit.getPluginManager().registerEvents(new Events(), this);
+        EntryCore.getInstance().getRegistryManager().registerHandlers(this, new Events());
     }
 
 }

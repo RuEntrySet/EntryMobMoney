@@ -1,6 +1,0 @@
-name: EntryMobMoney
-main: ru.entryset.mobmoney.EntryMobMoney
-version: 1.0
-api-version: 1.13
-depend: [EntryEconomy]
-author: EntrySet

@@ -1,0 +1,5 @@
+{
+  "name": "EntryMobMoney",
+  "main": "ru.entryset.mobmoney.EntryMobMoney",
+  "depend": ["EntryEconomy"]
+}
