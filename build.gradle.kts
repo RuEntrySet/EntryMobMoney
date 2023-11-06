@@ -19,8 +19,8 @@ dependencies {
 
     compileOnly("org.spigotmc:spigot-api:1.19.3-R0.1-SNAPSHOT")
 
-    compileOnly(files("libs/EntryCore.jar"))
-    compileOnly(files("libs/EntryEconomy.jar"))
+    compileOnly(files("C:\\Users\\t9154\\Desktop\\sources\\EntryEconomy\\build\\libs\\EntryEconomy-1.0.0-all.jar"))
+    compileOnly(files("C:\\Users\\t9154\\Desktop\\sources\\EntryCore\\build\\libs\\EntryCore-1.0.0-all.jar"))
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.0")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")

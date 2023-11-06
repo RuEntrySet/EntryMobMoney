@@ -5,7 +5,7 @@ messages:
   getmoneyplayer: 'За убийство игрока вы получили &b<size> &fмонет.;actionbar:&a+<size> &fмонет.'
   target_getmoneyplayer: 'Вас убили, вы потеряли &b<size> &fмонет.;actionbar:&c-<size> &fмонет.'
 permissions:
-  x2money: 'hypermobmoney.x2money'
+  x2money: 'topkamobmoney.x2money'
 settings:
   player: 10
   mobs:
