@@ -4,6 +4,7 @@ import ru.entryset.core.EntryCore;
 import ru.entryset.core.bukkit.bukkit.configuration.Config;
 import ru.entryset.core.bukkit.bukkit.manager.Messager;
 import ru.entryset.core.expansion.Expansion;
+import ru.entryset.mobmoney.events.Events;
 
 public class EntryMobMoney extends Expansion {
 
