@@ -7,6 +7,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import ru.entryset.cosmoitems.EntryCosmoItems;
+import ru.entryset.cosmoitems.enchantments.MarsEnchantment;
 import ru.entryset.economy.EntryEconomy;
 import ru.entryset.economy.api.сurrency.Currency;
 import ru.entryset.mobmoney.EntryMobMoney;
@@ -59,6 +61,25 @@ public class Events implements Listener {
         if(money == 0.0){
             return;
         }
+
+        try {
+            MarsEnchantment enchantment = EntryCosmoItems.items.getEnchantment("cosmoimpair");
+            if(enchantment.hasEnchantment(damager.getInventory().getItemInMainHand())){
+                int level = enchantment.getLevel(damager.getInventory().getItemInMainHand());
+                switch (level){
+                    case 1:
+                        money = money*1.5;
+                        break;
+                    case 2:
+                        money = money*2.0;
+                        break;
+                    case 3:
+                        money = money*2.5;
+                        break;
+                }
+            }
+        } catch (Exception ignore){}
+
         Currency currency = EntryEconomy.getCurrencies().get("money");
         currency.give(damager, money);
         EntryMobMoney.messager.sendMessage(damager, EntryMobMoney.config.getMessage("getmoney").replace("<size>", money + ""));
