@@ -98,10 +98,6 @@ public class Events implements Listener {
         if(target.equals(damager)){
             return;
         }
-
-        if(Bukkit.getPluginManager().getPlugin("Vault") == null) {
-            return;
-        }
         Currency currency = EntryEconomy.getCurrencies().get("money");
 
         double money = currency.get(target);
@@ -109,7 +105,7 @@ public class Events implements Listener {
             return;
         }
 
-        money = (money * (EntryMobMoney.config.getInt("settings.player")/100));
+        money = (money * (EntryMobMoney.config.getSettings().getDouble("player")/100));
 
         currency.take(target, money);
         currency.give(damager, money);
